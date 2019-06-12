@@ -31,14 +31,14 @@ app.get('',  (req,res)  => {
 })
 
 app.get('/about',(req,res) => {
-    res.render('About',{
+    res.render('about',{
         title:'About Me',
         name:'Aayush Goyal'
     })
 })
 
 app.get('/help',(req,res) => {
-    res.render('Help',{
+    res.render('help',{
         helptext:'Helpful Test example',
         title: 'Help',
         name:'Aayush Goyal'
