@@ -19,7 +19,7 @@ app.set('view engine','hbs')
 hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
-console.log(__dirname)
+// console.log(__dirname)
 
 app.use(express.static(publicdirPath))
 
@@ -61,7 +61,7 @@ app.get('/weather',(req,res) => {
             forecast(latitude, longitude, (error, forecastdata) => {
                 if (error){
                     return res.send({
-                        error:error
+                        error:{error}
                     })
                 }
                 res.send({
@@ -73,15 +73,12 @@ app.get('/weather',(req,res) => {
         })
         
     }
-    
-    
-    
 })
 
 app.get('/products',(req,res)=>{
     if (!req.query.search){
         return res.send({
-            error:'You  must provide a search term'
+            error:'You must provide a search term'
         })
     }
     console.log(req.query.search)
@@ -108,6 +105,6 @@ app.get('*',(req,res) => {
 
 
 app.listen(port,() => {
-    console.log('Server is up  on port 3000')
+    console.log('Server is up on port 3000')
 })
 

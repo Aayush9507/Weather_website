@@ -6,7 +6,7 @@ const search = document.querySelector('input')
 const msg1 = document.querySelector('#msg1')
 const msg2 = document.querySelector('#msg2')
 
-msg1.textContent = "From app.js"
+msg1.textContent = ""
 
 weatherform.addEventListener('submit', (e) => {
     e.preventDefault()
